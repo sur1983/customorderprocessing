@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+ Copyright © Surender Kumar Suthar, Inc. All rights reserved.
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Webapi/etc/webapi.xsd">
+    <route url="/V1/customorderprocessing/update" method="POST">
+        <service class="Vendor\CustomOrderProcessing\Api\OrderStatusUpdateInterface" method="updateOrderStatus"/>
+        <resources>
+            <resource ref="Magento_Sales::manage"/>
+        </resources>
+    </route>
+</routes>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+ Copyright © Surender Kumar Suthar, Inc. All rights reserved.
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Vendor_CustomOrderProcessing::order_status_log"
+             title="Order Status Logs"
+             module="Vendor_CustomOrderProcessing"
+             parent="Magento_Sales::sales"
+             action="customorderprocessing/orderstatuslog/index"
+             resource="Vendor_CustomOrderProcessing::order_status_log"
+             sortOrder="10"/>
+    </menu>
+</config>

@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    
+    <settings>
+        <spinner>log_id</spinner>
+        <deps>
+            <dep>order_status_log_listing_data_source</dep>
+        </deps>
+    </settings>
+
+    <dataSource name="order_status_log_listing_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Vendor\CustomOrderProcessing\Ui\Component\DataProvider</argument>
+            <argument name="name" xsi:type="string">order_status_log_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">log_id</argument>
+            <argument name="requestFieldName" xsi:type="string">log_id</argument>
+        </argument>
+        <argument name="dataProviderClass" xsi:type="string">Vendor\CustomOrderProcessing\Ui\Component\DataProvider</argument>
+    </dataSource>
+
+    <listingToolbar name="listing_top">
+        <paging name="listing_paging"/>
+    </listingToolbar>
+
+    <columns name="order_status_log_columns">
+        <column name="log_id">
+            <settings>
+                <filter>text</filter>
+                <sorting>asc</sorting>
+                <label>Log ID</label>
+            </settings>
+        </column>
+        <column name="order_id">
+            <settings>
+                <filter>text</filter>
+                <label>Order ID</label>
+            </settings>
+        </column>
+        <column name="old_status">
+            <settings>
+                <filter>text</filter>
+                <label>Old Status</label>
+            </settings>
+        </column>
+        <column name="new_status">
+            <settings>
+                <filter>text</filter>
+                <label>New Status</label>
+            </settings>
+        </column>
+        <column name="changed_at">
+            <settings>
+                <filter>dateRange</filter>
+                <label>Changed At</label>
+            </settings>
+        </column>
+    </columns>
+</listing>

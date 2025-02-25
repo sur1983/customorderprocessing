@@ -1,0 +1,23 @@
+<!-- Order Shipment Notification Email Template -->
+<!--
+@vars {
+    "customer_name": "Customer's Full Name",
+    "order_increment_id": "Order Increment ID",
+    "tracking_number": "Shipment Tracking Number"
+}
+-->
+{{template config_path="design/email/header_template"}}
+
+<p>Hello {{var customer_name}},</p>
+
+<p>Your order <strong>#{{var order_increment_id}}</strong> has been shipped!</p>
+
+{% if var tracking_number and var tracking_number != 'N/A' %}
+    <p><strong>Tracking Number:</strong> {{var tracking_number}}</p>
+{% endif %}
+
+<p>You can check your order status by logging into your account.</p>
+
+<p>Thank you for shopping with us!</p>
+
+{{template config_path="design/email/footer_template"}}

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+ Copyright © Surender Kumar Suthar, Inc. All rights reserved.
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="order_shipment_notification"
+              label="Order Shipment Notification"
+              file="order_shipment_notification.html"
+              type="html"
+              module="Vendor_CustomOrderProcessing"
+              area="frontend"/>
+</config>

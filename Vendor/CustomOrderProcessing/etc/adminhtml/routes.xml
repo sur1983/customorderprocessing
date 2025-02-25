@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!--
+ Copyright © Surender Kumar Suthar, Inc. All rights reserved.
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/routes.xsd">
+    <router id="admin">
+        <route id="customorderprocessing" frontName="customorderprocessing">
+            <module name="Vendor_CustomOrderProcessing"/>
+        </route>
+    </router>
+</config>

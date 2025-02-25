@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+ Copyright © Surender Kumar Suthar, Inc. All rights reserved.
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework/Acl/etc/acl.xsd">
+    <acl>
+ 
+    <resources>
+        <resource id="Magento_Backend::admin">
+            <resource id="Magento_Sales::sales">
+                <resource id="Vendor_CustomOrderProcessing::main" title="Custom Order Processing" sortOrder="10">
+                    <resource id="Vendor_CustomOrderProcessing::order_status_log" title="Order Status Logs" sortOrder="20"/>
+                </resource>
+            </resource>
+        </resource>
+    </resources>
+    </acl>
+</config>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+ Copyright © Surender Kumar Suthar, Inc. All rights reserved.
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework/Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="order_status_log" resource="default" engine="innodb" comment="Order Status Change Log">
+        <column name="log_id" xsi:type="int" unsigned="true" nullable="false" identity="true" comment="Log ID"/>
+        <column name="order_id" xsi:type="int" unsigned="true" nullable="false" comment="Order ID"/>
+        <column name="old_status" xsi:type="varchar" length="255" nullable="false" comment="Old Order Status"/>
+        <column name="new_status" xsi:type="varchar" length="255" nullable="false" comment="New Order Status"/>
+        <column name="changed_at" xsi:type="timestamp" nullable="false" default="CURRENT_TIMESTAMP" comment="Change Timestamp"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="log_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="VENDOR_ORDER_STATUS_LOG_ORDER_ID_SALES_ORDER_ENTITY_ID"
+                    table="order_status_log" column="order_id"
+                    referenceTable="sales_order" referenceColumn="entity_id"
+                    onDelete="CASCADE"/>
+        <index referenceId="VENDOR_ORDER_STATUS_LOG_ORDER_ID_IDX">
+            <column name="order_id"/>
+        </index>
+    </table>
+</schema>
